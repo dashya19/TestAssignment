@@ -151,7 +151,7 @@ public class TubeState {
     public String toString() {
         StringBuilder sb = new StringBuilder();
 
-        // Отображение пробирки сверху вниз
+        // Отображаем пробирки сверху вниз
         for (int level = tubeCapacity - 1; level >= 0; level--) {
             for (int b = 0; b < totalTubes; b++) {
                 if (level < fillHeights[b]) {

@@ -28,6 +28,13 @@ public class LiquidsSortingApplication {
                 { 0, 0, 0, 0 } // пробирка 13 - пустая
         };
 
+//        int[][] initialTubesLiquid = new int[][] { // простой пример
+//                {1, 1, 1, 1},
+//                {2, 2, 2, 2},
+//                {3, 3, 3, 3},
+//                {0, 0, 0, 0}
+//        };
+
         TubeState initialTubeState = TubeState.fromArray(initialTubesLiquid);
 
         System.out.println("---ИСХОДНОЕ СОСТОЯНИЕ---");

@@ -65,6 +65,48 @@ public class TubeState {
     public int getFillHeight(int tubeIndex) { return fillHeights[tubeIndex]; }
     public int getFreeSpace(int tubeIndex) { return tubeCapacity - fillHeights[tubeIndex]; }
 
+    // Метод для получения длины последовательности цвета сверху (сколько капель можно перелить за один ход)
+    public int getTopColorRun(int i) {
+        int h = fillHeights[i]; // высота заполнения пробирки
+        if (h == 0) return 0; // пустая пробирка
+        int color = tubeContents[i][h-1]; // цвет верхней капли
+        int run = 0;
+        // Подсчет кодичества подряд идущих капель одного цвета сверху
+        for (int k = h-1; k >=0; k--) {
+            if (tubeContents[i][k] == color) run++;
+            else break;
+        }
+        return run;
+    }
+
+    // Метод применения хода к текущ состоянию
+    public TubeState apply(int fromIdx, int toIdx, int amount) {
+        int[][] nc = new int[totalTubes][tubeCapacity];
+        int[] nh = new int[totalTubes];
+        // Копирование текущ состояния
+        for (int i = 0; i < totalTubes; i++) {
+            System.arraycopy(this.tubeContents[i], 0, nc[i], 0, tubeCapacity);
+            nh[i] = this.fillHeights[i];
+        }
+
+        int fromHeight = nh[fromIdx]; // высота исходной пробирки
+        int color = nc[fromIdx][fromHeight - 1]; // цвет переливаемой жидкости
+        // Удаление жидкости из исх пробирки
+        for (int k = 0; k < amount; k++) {
+            nc[fromIdx][fromHeight - 1 - k] = 0;
+        }
+        nh[fromIdx] = fromHeight - amount; // обновление высоты исх пробирки
+
+        int toHeight = nh[toIdx]; // высота целевой пробирки
+        // Добавление жидкости в цел пробирку
+        for (int k = 0; k < amount; k++) {
+            nc[toIdx][toHeight + k] = color;
+        }
+        // Обновление высоты цел пробирки
+        nh[toIdx] = toHeight + amount;
+        return new TubeState(nc, nh); // новое состояние
+    }
+
     // Проверка, является ли состояние решенным
     public boolean isSolved() {
         // Проверка каждой пробирки

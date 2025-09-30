@@ -146,4 +146,38 @@ public class TubeState {
         }
         return sb.toString();
     }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+
+        // Отображение пробирки сверху вниз
+        for (int level = tubeCapacity - 1; level >= 0; level--) {
+            for (int b = 0; b < totalTubes; b++) {
+                if (level < fillHeights[b]) {
+                    sb.append(String.format("[%2d]", tubeContents[b][level]));
+                } else {
+                    sb.append("[  ]"); // пустая ячейка
+                }
+                sb.append("  ");
+            }
+            sb.append("\n");
+        }
+
+        // Номера пробирок
+        for (int b = 0; b < totalTubes; b++) {
+            sb.append(String.format(" #%-3d ", b));
+        }
+        sb.append("\n");
+
+        // Высоты заполнения
+        sb.append("Заполненность:\n");
+        for (int b = 0; b < totalTubes; b++) {
+            sb.append(String.format("%2d/%d", fillHeights[b], tubeCapacity));
+            if (b + 1 < totalTubes) sb.append(", ");
+        }
+        sb.append("\n");
+
+        return sb.toString();
+    }
 }

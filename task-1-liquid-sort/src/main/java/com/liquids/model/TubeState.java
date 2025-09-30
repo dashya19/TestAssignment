@@ -1,6 +1,9 @@
 package com.liquids.model;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 // Класс для описания состояния всех пробирок в данный момент
 public class TubeState {
@@ -121,5 +124,26 @@ public class TubeState {
             }
         }
         return true;
+    }
+
+    // Метод для получения канонического представления состояния (для сравнения) - для предотвращения дубликатов
+    public String canonical() {
+        StringBuilder sb = new StringBuilder(totalTubes * (tubeCapacity + 1)); //конкатенация
+        List<String> bottleStrings = new ArrayList<>(); // строковое предст кажд пробирки
+        // Формирование строки
+        for (int i = 0; i < totalTubes; i++) {
+            StringBuilder bottleSb = new StringBuilder();
+            for (int d = 0; d < tubeCapacity; d++) {
+                bottleSb.append(tubeContents[i][d]).append(',');
+            }
+            bottleStrings.add(bottleSb.toString());
+        }
+
+        // Сортировка строк
+        Collections.sort(bottleStrings);
+        for (String bottle : bottleStrings) {
+            sb.append(bottle).append('|');
+        }
+        return sb.toString();
     }
 }

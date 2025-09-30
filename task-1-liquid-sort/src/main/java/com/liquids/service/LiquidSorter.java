@@ -125,7 +125,20 @@ public class LiquidSorter {
                 if (targetTopColor != 0 && targetTopColor != liquidColor) continue; // либо пустая либо тот же цвет
 
                 int maxTransfer = Math.min(colorRun, state.getFreeSpace(targetTube)); // макс колво перелит капель
-                validMoves.add(new Move(sourceTube, targetTube, maxTransfer));
+
+                // Условия для добавления хода:
+                // 1. Можно перелить всю
+                if (maxTransfer == colorRun) {
+                    validMoves .add(new Move(sourceTube, targetTube, maxTransfer));
+                }
+                // 2. Можно перелить хотя бы 2 капли
+                else if (maxTransfer >= 2) {
+                    validMoves .add(new Move(sourceTube, targetTube, maxTransfer));
+                }
+                // 3. Целевая пробирка полностью пуста
+                else if (state.getFreeSpace(targetTube) == state.getTubeCapacity()) {
+                    validMoves .add(new Move(sourceTube, targetTube, 1));
+                }
             }
         }
         return validMoves;

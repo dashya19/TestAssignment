@@ -11,4 +11,9 @@ public class Move {
         this.targetTube = targetTube;
         this.dropsCount = dropsCount;
     }
+
+    @Override
+    public String toString() {
+        return String.format("Из пробирки %2d в пробирку %2d перелито %d капель", sourceTube, targetTube, dropsCount);
+    }
 }

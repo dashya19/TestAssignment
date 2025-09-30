@@ -1,5 +1,7 @@
 package com.fileservice;
 
+import com.fileservice.config.HttpServerApp;
+
 // Точка входа в приложение
 public class FileExchangeApplication {
     public static void main(String[] args) throws Exception {

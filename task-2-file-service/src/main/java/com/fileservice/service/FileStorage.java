@@ -53,6 +53,10 @@ public class FileStorage {
         return null;
     }
 
+    public static FileMetadata getFileMetadata(String id) {
+        return files.get(id);
+    }
+
     public static Collection<FileMetadata> getAll() {
         return files.values();
     }

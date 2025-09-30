@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сервис прогноза погоды</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+<div class="container">
+    <header class="header">
+        <h1>Прогноз погоды</h1>
+        <p>Получите 24-часовой прогноз температуры для любого города</p>
+    </header>
+
+    <div class="search-section">
+        <div class="input-group">
+            <input type="text" id="cityInput" placeholder="Введите название города (например, Москва, Лондон)" value="Москва">
+            <button id="searchBtn" onclick="getWeather()">Получить прогноз</button>
+        </div>
+    </div>
+
+    <div id="loading" class="loading hidden">Загрузка данных о погоде...</div>
+
+    <div id="result" class="result-section"></div>
+
+    <div id="chartContainer" class="chart-section"></div>
+</div>
+
+<script src="/static/script.js"></script>
+</body>
+</html>

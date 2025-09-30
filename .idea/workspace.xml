@@ -4,18 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f1efaf6-f5e5-4e8d-b628-66a76d3376a5" name="Changes" comment="" />
+    <list default="true" id="4f1efaf6-f5e5-4e8d-b628-66a76d3376a5" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task-1-liquid-sort/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/task-1-liquid-sort/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task-1-liquid-sort/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/task-1-liquid-sort/src/main/java/com.liquids/Main.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 8
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="33PsEqd7uJi0T0RmzQ3NWVAvgT5" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -26,6 +38,7 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/Работа/Fullstack/test-assignment",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -40,7 +53,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Работа\Fullstack\test-assignment\task-1-liquid-sort\src\main\java\com.liquids" />
       <recent name="D:\Работа\Fullstack\test-assignment\task-1-liquid-sort\src\main\java" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.liquids.service" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -60,6 +77,7 @@
       <option name="presentableId" value="Default" />
       <updated>1759229932696</updated>
       <workItem from="1759229933725" duration="2096000" />
+      <workItem from="1759232209268" duration="5310000" />
     </task>
     <servers />
   </component>

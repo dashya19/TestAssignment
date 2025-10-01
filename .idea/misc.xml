@@ -6,6 +6,8 @@
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/task-1-liquid-sort/pom.xml" />
+        <option value="$PROJECT_DIR$/task-2-file-service/pom.xml" />
+        <option value="$PROJECT_DIR$/task-3-weather-service/pom.xml" />
       </list>
     </option>
   </component>

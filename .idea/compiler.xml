@@ -6,6 +6,8 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="task-2-file-service" />
+        <module name="task-3-weather-service" />
         <module name="test-assignment" />
       </profile>
     </annotationProcessing>

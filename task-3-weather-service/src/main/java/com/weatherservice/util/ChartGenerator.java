@@ -26,6 +26,12 @@ public class ChartGenerator {
                     "24-часовой прогноз температуры для " + city,
                     "Время", "Температура (°C)", dataset);
 
+            chart.getCategoryPlot()
+                    .getDomainAxis()
+                    .setCategoryLabelPositions(
+                            org.jfree.chart.axis.CategoryLabelPositions.createUpRotationLabelPositions(Math.PI / 4)
+                    );
+
             ByteArrayOutputStream os = new ByteArrayOutputStream();
             ChartUtils.writeChartAsPNG(os, chart, 800, 600);
             return os.toByteArray();

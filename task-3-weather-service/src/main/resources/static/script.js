@@ -9,7 +9,7 @@ async function getWeather() {
 
     // Проверка, что пользователь ввел название города
     if (!city) {
-        showError('Please enter a city name');
+        showError('Пожалуйста, введите название города');
         return;
     }
 
@@ -24,7 +24,7 @@ async function getWeather() {
         const data = await response.json();
 
         if (!response.ok) {
-            throw new Error(data.error || 'Failed to fetch weather data');
+            throw new Error(data.error || 'Не удалось получить данные о погоде');
         }
 
         if (data.error) {

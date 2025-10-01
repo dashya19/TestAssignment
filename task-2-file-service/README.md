@@ -13,3 +13,9 @@ mvn exec:java -Dexec.mainClass="com.fileservice.FileServer"
 # Или собрать JAR и запустить
 mvn clean package
 java -jar target/file-service-1.0.jar
+
+# Доступ к приложению
+http://localhost:8080
+
+
+

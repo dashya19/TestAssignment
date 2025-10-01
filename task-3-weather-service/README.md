@@ -49,7 +49,7 @@ mvn compile exec:java
 2. Сервер будет доступен на: [http://localhost:8080](http://localhost:8080)
 
 ---
-## 🌍 Внешние API
+## Внешние API
 
 Сервис использует публичные API **Open-Meteo**:
 
@@ -97,4 +97,5 @@ curl http://localhost:8080/health
 # Получение прогноза
 curl http://localhost:8080/weather?city=Moscow
 ```
+
 

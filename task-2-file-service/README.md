@@ -132,7 +132,7 @@ mvn compile exec:java
 
 ---
 
-4. Сервер будет доступен на: [http://localhost:8080](http://localhost:8080)
+2. Сервер будет доступен на: [http://localhost:8080](http://localhost:8080)
 
 ---
 
@@ -141,4 +141,5 @@ mvn compile exec:java
 * Данные хранятся в `src/main/resources/files/`.
 * Метаданные сохраняются в `files_metadata.json`.
 * Очистка старых файлов запускается автоматически (файлы старше 30 дней удаляются).
+
 

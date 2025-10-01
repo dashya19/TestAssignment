@@ -49,47 +49,32 @@ mvn compile exec:java
 2. Сервер будет доступен на: [http://localhost:8080](http://localhost:8080)
 
 ---
-## API
+## 🌍 Внешние API
 
-### Проверка состояния
+Сервис использует публичные API **Open-Meteo**:
 
-```
-GET /health
-```
-
-Ответ:
-
-```json
-{"status":"OK"}
-```
-
-### Получение прогноза
+### Геокодинг города
 
 ```
-GET /weather?city={cityName}
+GET https://geocoding-api.open-meteo.com/v1/search?name={city}&count=1&language=en&format=json
 ```
 
 Пример:
 
 ```
-GET http://localhost:8080/weather?city=Berlin
+https://geocoding-api.open-meteo.com/v1/search?name=Berlin&count=1&language=en&format=json
 ```
 
-Ответ:
+### Прогноз погоды
 
-```json
-{
-  "city": "Berlin",
-  "latitude": 52.5244,
-  "longitude": 13.4105,
-  "weatherData": {
-    "hourly": {
-      "time": ["2025-10-01T00:00", "2025-10-01T01:00", ...],
-      "temperature_2m": [15.3, 14.8, ...]
-    }
-  },
-  "temperatureChart": "iVBORw0KGgoAAAANS..."   # PNG в base64
-}
+```
+GET https://api.open-meteo.com/v1/forecast?latitude={lat}&longitude={lon}&hourly=temperature_2m&forecast_days=2&timezone=auto
+```
+
+Пример:
+
+```
+https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&hourly=temperature_2m&forecast_days=2&timezone=auto
 ```
 
 ### Веб-интерфейс
@@ -110,5 +95,6 @@ GET http://localhost:8080/weather?city=Berlin
 curl http://localhost:8080/health
 
 # Получение прогноза
-curl http://localhost:8080/weather?city=London
+curl http://localhost:8080/weather?city=Moscow
 ```
+

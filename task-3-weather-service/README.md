@@ -82,20 +82,5 @@ https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&hourly=tem
 * Главная страница: [http://localhost:8080](http://localhost:8080)
 * Статические ресурсы: `/static/styles.css`, `/static/script.js`
 
-## Зависимости
-
-* **Jackson** — сериализация/десериализация JSON
-* **JFreeChart** — построение графиков
-* **Java HttpClient (java.net.http)** — вызовы внешних API
-
-## Пример использования через curl
-
-```bash
-# Проверка состояния
-curl http://localhost:8080/health
-
-# Получение прогноза
-curl http://localhost:8080/weather?city=Moscow
-```
 
 
